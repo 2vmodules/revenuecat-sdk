@@ -8,7 +8,8 @@ on:
 
 jobs:
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 10
 
@@ -17,7 +18,7 @@ jobs:
 
       - name: Cache Composer packages
         id: composer-cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: vendor
           key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
@@ -35,3 +36,6 @@ jobs:
 
       - name: Run static analysis via PHPStan
         run: vendor/bin/phpstan analyse src tests
+
+      - name: Run tests
+        run: vendor/bin/phpunit --testdox
