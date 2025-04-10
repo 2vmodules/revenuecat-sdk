@@ -2,6 +2,7 @@
     "name": "twovmodules/revenuecat-sdk",
     "description": "PHP SDK for RevenueCat payment service",
     "type": "library",
+    "license": "MIT",
     "require": {
         "php": "^8.2",
         "psr/http-client": "^1.0",
