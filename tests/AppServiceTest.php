@@ -101,8 +101,8 @@ class AppServiceTest extends TestCase
         $appService = $this->getService($data);
 
         $app = $appService->update('app1', UpdateApp::fromArray([
-                'name' => 'Updated App',
-            ]), 'proj1');
+            'name' => 'Updated App',
+        ]), 'proj1');
 
         $this->assertInstanceOf(App::class, $app);
         $this->assertSame('Updated App', $app->name);

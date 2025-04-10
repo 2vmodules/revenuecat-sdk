@@ -267,8 +267,8 @@ class CustomerService extends BaseService
         $endpoint = sprintf('/projects/%s/customers/%s/attributes', $projectId, $customerId);
 
         $response = $this->sendRequest('POST', $endpoint, [
-                'attributes' => $attributes,
-            ]);
+            'attributes' => $attributes,
+        ]);
 
         $response['items'] = array_map(
             static fn ($attributesData): CustomerAttribute => CustomerAttribute::fromArray($attributesData),

@@ -29,7 +29,10 @@ class ProjectService extends BaseService
 
         $response = $this->sendRequest('GET', $endpoint);
 
-        $response['items'] = array_map(static fn ($item): Project => Project::fromArray($item), $response['items'] ?? []);
+        $response['items'] = array_map(
+            static fn ($item): Project => Project::fromArray($item),
+            $response['items'] ?? []
+        );
 
         return new Paginator($response['items'], $response['next_page'], $response['url']);
     }
