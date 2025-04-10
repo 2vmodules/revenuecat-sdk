@@ -1,7 +1,6 @@
 <p align="center"><a href="https://2vmodules.com" target="_blank">
     <img src="https://2vmodules.com/images/logo.svg" alt="2Vmodules Logo">
 </a></p>
-# RevenueCat PHP SDK
 
 ## 📌 Description
 
