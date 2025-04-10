@@ -9,7 +9,7 @@ This SDK provides a convenient interface for working with the RevenueCat API, fo
 ## 🚀 Installation
 
 ```sh
-composer require Twovmodules/revenuecat-sdk
+composer require twovmodules/revenuecat-sdk
 ```
 
 ## 🛠 Minimum Requirements
