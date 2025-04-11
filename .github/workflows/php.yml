@@ -7,14 +7,28 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  tests:
     runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: true
+      matrix:
+        php: [ 8.2, 8.3, 8.4 ]
+
+    name: PHP ${{ matrix.php }}
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 10
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: dom, curl, libxml, mbstring, zip
+          coverage: none
 
       - name: Validate composer.json and composer.lock
         run: composer validate --strict
@@ -29,16 +43,16 @@ jobs:
             ${{ runner.os }}-php-
 
       - name: Install dependencies
-        run: composer install --prefer-dist --no-progress
+        run: composer install --prefer-dist --no-interaction --no-progress
 
       - name: Check coding style via ECS
-        run: vendor/bin/ecs check
+        run: composer check-ecs
 
       - name: Check coding style via Rector
-        run: vendor/bin/rector process --memory-limit=1G --dry-run --ansi
+        run: composer check-rector
 
       - name: Run static analysis via PHPStan
-        run: vendor/bin/phpstan analyse src tests
+        run: composer stan
 
       - name: Run tests
-        run: vendor/bin/phpunit --testdox
+        run: composer test
