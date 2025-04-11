@@ -3,6 +3,8 @@
 </a></p>
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/twovmodules/revenuecat-sdk.svg?style=flat-square)](https://packagist.org/packages/twovmodules/revenuecat-sdk)
+[![Tests](https://github.com/2vmodules/revenuecat-sdk/workflows/tests/badge.svg)](https://github.com/2vmodules/revenuecat-sdk/actions)
+
 
 ## 📌 Description
 
