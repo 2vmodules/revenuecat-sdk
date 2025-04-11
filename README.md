@@ -2,6 +2,8 @@
     <img src="https://2vmodules.com/images/logo.svg" alt="2Vmodules Logo">
 </a></p>
 
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/twovmodules/revenuecat-sdk.svg?style=flat-square)](https://packagist.org/packages/twovmodules/revenuecat-sdk)
+
 ## 📌 Description
 
 This SDK provides a convenient interface for working with the RevenueCat API, following PSR standards. It supports managing projects, customers, subscriptions, entitlements, and other RevenueCat entities.
